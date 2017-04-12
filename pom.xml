@@ -67,6 +67,31 @@
 					<warName>${project.build.finalName}</warName>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.20.1</version>
+				<configuration>
+					<images>
+						<image>
+
+							<alias>spring-tomcat</alias>
+							<name>lyne/spring-boot-with-tomcat-2</name>
+
+							<build>
+								<!--获取镜像-->
+								<from>tomcat:jre7</from>
+							</build>
+
+							<run>
+								<ports>
+									<port>tomcat.port:8080</port>
+								</ports>
+							</run>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
