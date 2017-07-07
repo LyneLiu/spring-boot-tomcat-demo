@@ -32,7 +32,13 @@
             SpringApplication.run(MainApplication.class, args);
         }
     }
+    
+    
+    Note:
+    SpringBootServletInitializer继承了WebApplicationInitializer，并且WebApplicationInitializer在Servlet3.0才支持。
+    通过WebApplicationInitializer可以不使用传统的web.xml配置文件的方式。
 
 
 参考链接：
 https://coffee0127.github.io/blog/2017/04/26/convert-spring-boot-jar-to-war/
+http://docs.spring.io/spring-framework/docs/4.3.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html
